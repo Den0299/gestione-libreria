@@ -401,11 +401,11 @@ class BookTests {
 						.param("size", String.valueOf(size))
 						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.content.length()").value(2))           // La lista di libri nella pagina ha 2 elementi
-				.andExpect(jsonPath("$.content[0].available").value(true))   // Primo libro ha il genere corretto
-				.andExpect(jsonPath("$.content[1].available").value(true))   // Secondo libro idem
-				.andExpect(jsonPath("$.totalElements").value(2))              // Totale elementi
-				.andExpect(jsonPath("$.number").value(page))                               // Numero pagina
+				.andExpect(jsonPath("$.content.length()").value(2))
+				.andExpect(jsonPath("$.content[0].available").value(true))
+				.andExpect(jsonPath("$.content[1].available").value(true))
+				.andExpect(jsonPath("$.totalElements").value(2))
+				.andExpect(jsonPath("$.number").value(page))
 				.andDo(print());
 	}
 	@Test
@@ -487,11 +487,11 @@ class BookTests {
 						.param("size", String.valueOf(size))
 						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.content.length()").value(2))           // La lista di libri nella pagina ha 2 elementi
-				.andExpect(jsonPath("$.content[0].price").value(15.0))   // Primo libro ha il genere corretto
-				.andExpect(jsonPath("$.content[1].price").value(21.0))   // Secondo libro idem
-				.andExpect(jsonPath("$.totalElements").value(2))              // Totale elementi
-				.andExpect(jsonPath("$.number").value(page))                               // Numero pagina
+				.andExpect(jsonPath("$.content.length()").value(2))
+				.andExpect(jsonPath("$.content[0].price").value(15.0))
+				.andExpect(jsonPath("$.content[1].price").value(21.0))
+				.andExpect(jsonPath("$.totalElements").value(2))
+				.andExpect(jsonPath("$.number").value(page))
 				.andDo(print());
 	}
 
