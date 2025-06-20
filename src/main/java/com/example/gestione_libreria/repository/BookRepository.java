@@ -39,4 +39,8 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     @Query(value = "SELECT * FROM Book b WHERE b.price > ?1 AND b.price < ?2", nativeQuery = true)
     List<Book> findByPriceBetween(Integer min, Integer max);
 
+    @Query(value = "SELECT * FROM Book b WHERE b.price > ?1 AND b.price < ?2", nativeQuery = true)
+    Page<Book> findByPriceBetweenPaginated(Integer min, Integer max, Pageable pageable);
+
+
 }
